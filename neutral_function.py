@@ -15,6 +15,7 @@ text_color = my_module.text_color
 def get_text():
     with open("data/text_to_print", "r") as file:
         to_return = "".join([f"\t{line}" for line in file.readlines()])
+    to_return += f"\n\t{my_module.neutral_message}"
     match my_module.text_color:
         case "red":
             return f"{Fore.RED}{to_return}{Style.RESET_ALL}"
